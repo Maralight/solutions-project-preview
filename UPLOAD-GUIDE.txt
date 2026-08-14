@@ -1,0 +1,25 @@
+SOLUTIONS PROJECT WEBSITE PREVIEW V2.0 — VIDEO + GITHUB GUIDE
+
+1. Download and extract Solutions_Project_Website_Preview_v2.0.zip.
+2. Open the extracted folder.
+3. Open assets.
+4. Open video.
+5. Put your WebM file there and rename it EXACTLY hero-desktop.webm.
+6. Put your MP4 file there and rename it EXACTLY hero-desktop.mp4.
+7. The final paths must be:
+   assets/video/hero-desktop.webm
+   assets/video/hero-desktop.mp4
+8. Open index.html locally. If local autoplay is blocked, the poster may show; GitHub Pages should serve the video normally.
+9. In GitHub open the existing solutions-project-preview repository.
+10. Remove the old Version 1 files. Keep the repository itself so the preview URL remains unchanged.
+11. Click Add file > Upload files.
+12. On your computer open the extracted V2 folder.
+13. Select EVERYTHING INSIDE that folder, not the outer folder itself.
+14. Drag the files/folders into GitHub.
+15. Confirm index.html is at the repository root, alongside assets and services.
+16. Commit with: Replace preview with Solutions Project Website v2.0
+17. Open Settings > Pages and confirm: Deploy from a branch > main > /(root).
+18. Wait for deployment, then open:
+   https://maralight.github.io/solutions-project-preview/index.html
+19. This preview is deliberately noindex. Do not submit it to Google Search Console.
+20. Production SEO is activated only after client approval and migration to the client domain.

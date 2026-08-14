@@ -1,0 +1,38 @@
+SOLUTIONS PROJECT WEBSITE PREVIEW — VERSION 3.0
+
+HERO FALLBACK LOGIC
+1. Desktop tries hero-desktop.webm first.
+2. If unavailable, the browser tries hero-desktop.mp4.
+3. If no playable video is found, the 4-scene cinematic slideshow remains visible.
+4. If imagery cannot load, the underlying dark hero background remains.
+5. Tablet and mobile deliberately use the slideshow instead of the video.
+
+YOUR CURRENT TEST
+You have only an MP4. That is fine.
+First upload Version 3.0 with NO video to inspect the slideshow.
+Then add your MP4 here:
+assets/video/hero-desktop.mp4
+Commit it to GitHub and desktop will use it automatically if playable.
+If you dislike it, delete that MP4 from GitHub and the slideshow returns automatically.
+
+OPTIONAL WEBM LATER
+assets/video/hero-desktop.webm
+If added, browsers that support it will try it before MP4.
+
+SLIDESHOW
+The package contains four lightweight designed placeholder scenes:
+- port / vessel / container crane
+- engineering and construction environment with African PPE-clad personnel
+- industrial equipment / heavy machinery
+- inspection / technical environment with African PPE-clad personnel
+
+For production, these placeholders should be replaced by licensed or approved high-quality photographic WebP/JPEG assets using the same filenames or by updating the CSS.
+
+RESPONSIVE
+Desktop: video if available; otherwise slideshow.
+Tablet: slideshow.
+Mobile: slideshow.
+Reduced-motion users: first static slide only.
+
+PREVIEW SEO
+This remains a noindex client preview. Do not submit it to Search Console.
