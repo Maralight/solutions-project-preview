@@ -1,0 +1,16 @@
+Solutions Project Nigeria Limited Website Preview
+Version: 5.0
+Build type: clean rebuild
+Preview indexing: disabled
+
+Architecture:
+- Dedicated image folders by page and component
+- Six-image homepage slideshow isolated from all other page imagery
+- Optional two-video hero architecture with slideshow fallback
+- Strategic homepage Bento distinct from Services
+- Animated horizontal Services directory
+- Dedicated individual service asset folders
+- Icon-led Capabilities architecture
+- Formspree-ready preview forms
+- GA4-ready inactive configuration
+- SEO/GEO production scaffolding

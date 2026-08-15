@@ -1,0 +1,31 @@
+SOLUTIONS PROJECT NIGERIA LIMITED — V5.0 UPLOAD GUIDE
+
+1. Download and extract Solutions_Project_Website_Preview_v5.0.zip.
+2. Open the extracted folder.
+3. Open the GitHub repository used for the preview.
+4. Delete the old Version 4.x files from the repository.
+5. Upload ALL files and folders INSIDE the extracted Version 5.0 folder.
+6. Do not upload the ZIP itself.
+7. Preserve every folder exactly as supplied.
+8. Commit with:
+   Replace website preview with clean Version 5.0 rebuild
+9. Wait for GitHub Pages to finish deploying.
+10. Open the preview and hard-refresh with Ctrl + F5.
+
+VIDEO
+Place optional files here:
+assets/video/home-hero/hero-01.mp4
+assets/video/home-hero/hero-02.mp4
+
+The site works without video. The six-image slideshow is the fallback.
+
+IMAGE REPLACEMENT
+To replace a visual, replace the file in its labelled folder using the SAME filename.
+Example:
+assets/images/contact/hero/contact-reception.webp
+
+No HTML edit is required when the filename is unchanged.
+
+IMPORTANT
+The preview is intentionally blocked from search indexing.
+Do not activate production robots, canonical URLs, analytics or forms until client approval and domain migration.

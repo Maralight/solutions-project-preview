@@ -1,0 +1,18 @@
+V5.0 QA REPORT
+HTML pages checked: 15
+Missing internal references: 0
+H1 issues: 0
+Missing favicon references: 0
+Duplicate long body-content blocks (excluding site chrome/legal): 3
+
+Missing refs:
+[]
+
+H1 issues:
+[]
+
+Duplicate blocks:
+[('The final technical scope, standards, quantities, responsibilities and deliverables are confirmed against the client requirement before exec', ['services/engineering-construction.html', 'services/sales-supply.html', 'services/manpower-supply.html', 'services/inspection-services.html', 'services/equipment-leasing.html', 'services/general-contract-services.html']), ('The sequence below is intentionally tailored to this service rather than repeating a generic website template.', ['services/engineering-construction.html', 'services/sales-supply.html', 'services/manpower-supply.html', 'services/inspection-services.html', 'services/equipment-leasing.html', 'services/general-contract-services.html']), ('Location, quantity, duration, technical specification, mobilisation conditions and client responsibilities can materially affect the commerc', ['services/engineering-construction.html', 'services/sales-supply.html', 'services/manpower-supply.html', 'services/inspection-services.html', 'services/equipment-leasing.html', 'services/general-contract-services.html'])]
+
+POST-CONTENT-CORRECTION AUDIT
+Duplicate long body-content blocks remaining: 0
