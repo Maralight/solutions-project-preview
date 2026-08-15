@@ -5,19 +5,30 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const sources = window.SP_CONFIG.slides;
-  const slides = [];
+  const FADE_TIME = 1800;
+  const DISPLAY_TIME = 5500;
 
-  sources.forEach((src, index) => {
+  const slides = [];
+  let currentIndex = 0;
+  let changing = false;
+
+  window.SP_CONFIG.slides.forEach((src, index) => {
     const image = new Image();
 
     image.src = src;
     image.alt = "Solutions Project industrial project environment";
     image.className = "hero-slide";
 
-    if (index === 0) {
-      image.classList.add("active");
-    }
+    image.style.position = "absolute";
+    image.style.inset = "0";
+    image.style.width = "100%";
+    image.style.height = "100%";
+    image.style.objectFit = "cover";
+
+    image.style.opacity = index === 0 ? "1" : "0";
+    image.style.zIndex = index === 0 ? "2" : "1";
+
+    image.style.transition = `opacity ${FADE_TIME}ms ease-in-out`;
 
     host.appendChild(image);
     slides.push(image);
@@ -27,18 +38,49 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  let currentIndex = 0;
+  function showNextSlide() {
+    if (changing) {
+      return;
+    }
 
-  const changeSlide = () => {
+    changing = true;
+
     const currentSlide = slides[currentIndex];
     const nextIndex = (currentIndex + 1) % slides.length;
     const nextSlide = slides[nextIndex];
 
-    nextSlide.classList.add("active");
-    currentSlide.classList.remove("active");
+    /*
+      Put the incoming image above the current image.
+      The outgoing image stays fully visible underneath.
+    */
+    nextSlide.style.zIndex = "3";
 
-    currentIndex = nextIndex;
-  };
+    /*
+      Force the browser to register the starting opacity
+      before beginning the transition.
+    */
+    nextSlide.style.opacity = "0";
 
-  setInterval(changeSlide, 6500);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        nextSlide.style.opacity = "1";
+      });
+    });
+
+    /*
+      Only after the new image has completely faded in
+      do we hide and reset the previous image.
+    */
+    window.setTimeout(() => {
+      currentSlide.style.opacity = "0";
+      currentSlide.style.zIndex = "1";
+
+      nextSlide.style.zIndex = "2";
+
+      currentIndex = nextIndex;
+      changing = false;
+    }, FADE_TIME + 100);
+  }
+
+  window.setInterval(showNextSlide, DISPLAY_TIME);
 });
