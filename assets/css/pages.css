@@ -104,6 +104,7 @@
 
 .home-hero .hero-copy .eyebrow {
   margin-bottom: 14px;
+  color: #C72A09;
 }
 
 .home-hero .hero-copy h1 {
@@ -118,6 +119,8 @@
 .home-hero .hero-copy .lead {
   max-width: 650px;
   margin: 22px 0 0;
+
+  color: #D4D8DD;
 
   font-size: clamp(1rem, 1.25vw, 1.18rem);
   line-height: 1.65;
