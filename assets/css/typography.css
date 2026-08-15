@@ -104,7 +104,7 @@ h4 {
 }
 
 .home-hero h1 em {
-  color: #ef5b39;
+  color: var(--red);
 
   font-style: normal;
 }
