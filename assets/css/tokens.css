@@ -1,0 +1,7 @@
+:root{
+ --red:#C72A09;--red2:#ed4b28;--black:#050608;--charcoal:#0d1014;--charcoal2:#15191e;
+ --white:#fff;--silver:#E4E2DD;--yellow:#EABD57;--muted:#68707b;--line:#dfe3e8;
+ --max:1240px;--header:78px;--r-sm:8px;--r-md:14px;--r-lg:22px;
+ --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;
+ --shadow:0 24px 70px rgba(5,6,8,.14);--ease:cubic-bezier(.2,.75,.2,1);
+}

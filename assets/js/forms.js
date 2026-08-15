@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("form[data-preview-form]").forEach(f=>f.addEventListener("submit",e=>{e.preventDefault();const n=f.querySelector(".form-note");if(n)n.textContent="Preview mode: form submission will be activated after client approval and Formspree configuration."}))});

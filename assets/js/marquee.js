@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("[data-marquee]").forEach(el=>{const c=el.querySelector(".marquee-cycle");if(c&&!el.dataset.cloned){el.appendChild(c.cloneNode(true));el.dataset.cloned="1"}})});

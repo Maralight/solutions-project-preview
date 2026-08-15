@@ -1,0 +1,3 @@
+@keyframes marquee{to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .7s var(--ease),transform .8s var(--ease)}.reveal.from-left{transform:translateX(-70px)}.reveal.from-right{transform:translateX(70px)}.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.marquee-track{animation:none}.reveal{opacity:1!important;transform:none!important;transition:none!important}.gloss:before{display:none}}
