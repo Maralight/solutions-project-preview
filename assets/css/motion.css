@@ -1,3 +1,471 @@
-@keyframes marquee{to{transform:translateX(-50%)}}
-.reveal{opacity:0;transform:translateY(38px);transition:opacity .7s var(--ease),transform .8s var(--ease)}.reveal.from-left{transform:translateX(-70px)}.reveal.from-right{transform:translateX(70px)}.reveal.visible{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.marquee-track{animation:none}.reveal{opacity:1!important;transform:none!important;transition:none!important}.gloss:before{display:none}}
+/* =========================================================
+   MOTION SYSTEM
+   Solutions Project Nigeria Limited
+========================================================= */
+
+
+/* =========================================================
+   1. MARQUEE
+========================================================= */
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+
+  animation:
+    marquee-scroll
+    34s
+    linear
+    infinite;
+
+  will-change: transform;
+}
+
+/*
+  Pause scrolling when the user intentionally
+  interacts with the marquee.
+*/
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   2. STANDARD SCROLL REVEAL
+========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translate3d(
+    0,
+    34px,
+    0
+  );
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.78s var(--ease);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* ---------------------------------------------------------
+   Directional Reveal
+--------------------------------------------------------- */
+
+.reveal.from-left {
+  transform: translate3d(
+    -56px,
+    0,
+    0
+  );
+}
+
+.reveal.from-right {
+  transform: translate3d(
+    56px,
+    0,
+    0
+  );
+}
+
+.reveal.from-top {
+  transform: translate3d(
+    0,
+    -38px,
+    0
+  );
+}
+
+.reveal.from-bottom {
+  transform: translate3d(
+    0,
+    46px,
+    0
+  );
+}
+
+
+/* ---------------------------------------------------------
+   Revealed State
+--------------------------------------------------------- */
+
+.reveal.visible {
+  opacity: 1;
+
+  transform:
+    translate3d(
+      0,
+      0,
+      0
+    );
+}
+
+
+/* =========================================================
+   3. HOMEPAGE SERVICES BENTO STAGGER
+========================================================= */
+
+/*
+  The service cards enter sequentially rather than
+  appearing simultaneously.
+*/
+
+.home-services-bento
+.service-bento-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.home-services-bento
+.service-bento-card:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+.home-services-bento
+.service-bento-card:nth-child(3) {
+  transition-delay: 160ms;
+}
+
+.home-services-bento
+.service-bento-card:nth-child(4) {
+  transition-delay: 80ms;
+}
+
+.home-services-bento
+.service-bento-card:nth-child(5) {
+  transition-delay: 160ms;
+}
+
+.home-services-bento
+.service-bento-card:nth-child(6) {
+  transition-delay: 240ms;
+}
+
+
+/* =========================================================
+   4. OPERATING ENVIRONMENT STAGGER
+========================================================= */
+
+.sector-rail
+.sector:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.sector-rail
+.sector:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.sector-rail
+.sector:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.sector-rail
+.sector:nth-child(4) {
+  transition-delay: 70ms;
+}
+
+.sector-rail
+.sector:nth-child(5) {
+  transition-delay: 140ms;
+}
+
+.sector-rail
+.sector:nth-child(6) {
+  transition-delay: 210ms;
+}
+
+
+/* =========================================================
+   5. STORY / CAPABILITY / CONTENT CARDS
+========================================================= */
+
+.story-card.reveal,
+.cap-card.reveal,
+.process-grid article.reveal,
+.engagement article.reveal {
+  transition:
+    opacity 0.65s ease,
+    transform 0.8s var(--ease);
+}
+
+
+/* =========================================================
+   6. SERVICE DIRECTORY ENTRANCE
+========================================================= */
+
+.service-strip.reveal.from-left {
+  transform:
+    translate3d(
+      -72px,
+      0,
+      0
+    );
+}
+
+.service-strip.reveal.from-right {
+  transform:
+    translate3d(
+      72px,
+      0,
+      0
+    );
+}
+
+.service-strip.reveal.visible {
+  opacity: 1;
+
+  transform:
+    translate3d(
+      0,
+      0,
+      0
+    );
+}
+
+
+/*
+  Sequential appearance of service rows.
+*/
+
+.service-directory
+.service-strip:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.service-directory
+.service-strip:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+.service-directory
+.service-strip:nth-child(3) {
+  transition-delay: 160ms;
+}
+
+.service-directory
+.service-strip:nth-child(4) {
+  transition-delay: 240ms;
+}
+
+.service-directory
+.service-strip:nth-child(5) {
+  transition-delay: 320ms;
+}
+
+.service-directory
+.service-strip:nth-child(6) {
+  transition-delay: 400ms;
+}
+
+
+/* =========================================================
+   7. HOVER LIFT
+========================================================= */
+
+.service-bento-card,
+.story-card,
+.cap-card,
+.sector,
+.engagement article,
+.process-grid article {
+  transition:
+    opacity 0.65s ease,
+    transform 0.78s var(--ease),
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.service-bento-card.visible:hover,
+.story-card.visible:hover,
+.cap-card.visible:hover,
+.sector.visible:hover,
+.engagement article.visible:hover,
+.process-grid article.visible:hover {
+  transform:
+    translate3d(
+      0,
+      -5px,
+      0
+    );
+}
+
+
+/* =========================================================
+   8. IMAGE MOTION
+========================================================= */
+
+.service-bento-card > img,
+.story-card > img,
+.sector > img,
+.service-strip .media img {
+  transition:
+    transform
+    0.65s
+    var(--ease);
+}
+
+.service-bento-card:hover > img,
+.story-card:hover > img,
+.sector:hover > img,
+.service-strip:hover .media img {
+  transform:
+    scale(1.035);
+}
+
+
+/* =========================================================
+   9. FOLIO MOTION
+========================================================= */
+
+.folio {
+  transform-origin: center;
+}
+
+.folio.open {
+  transform:
+    perspective(1400px)
+    rotateX(0deg)
+    scale(1);
+}
+
+.folio-cover {
+  transform-origin: center;
+}
+
+.folio-pages {
+  transform-origin: center;
+}
+
+
+/* =========================================================
+   10. MOBILE MOTION REDUCTION
+========================================================= */
+
+@media (max-width: 680px) {
+
+  /*
+    Reduce entrance distance on mobile so cards do not
+    appear to fly across the small viewport.
+  */
+
+  .reveal {
+    transform:
+      translate3d(
+        0,
+        26px,
+        0
+      );
+  }
+
+  .reveal.from-left {
+    transform:
+      translate3d(
+        -30px,
+        0,
+        0
+      );
+  }
+
+  .reveal.from-right {
+    transform:
+      translate3d(
+        30px,
+        0,
+        0
+      );
+  }
+
+  .service-strip.reveal.from-left {
+    transform:
+      translate3d(
+        -32px,
+        0,
+        0
+      );
+  }
+
+  .service-strip.reveal.from-right {
+    transform:
+      translate3d(
+        32px,
+        0,
+        0
+      );
+  }
+
+
+  /*
+    Keep mobile animation quick and controlled.
+  */
+
+  .reveal,
+  .service-strip {
+    transition-duration:
+      0.58s;
+  }
+}
+
+
+/* =========================================================
+   11. REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+
+    transform: none !important;
+  }
+
+  .reveal,
+  .reveal.from-left,
+  .reveal.from-right,
+  .reveal.from-top,
+  .reveal.from-bottom,
+  .service-strip.reveal.from-left,
+  .service-strip.reveal.from-right {
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    transition: none !important;
+  }
+
+  .service-bento-card,
+  .story-card,
+  .cap-card,
+  .sector,
+  .service-strip,
+  .engagement article,
+  .process-grid article,
+  .folio,
+  .folio-cover,
+  .folio-pages {
+    transition: none !important;
+  }
+
+  .gloss::before {
+    display: none !important;
+  }
+}
