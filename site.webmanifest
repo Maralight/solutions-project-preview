@@ -1,0 +1,15 @@
+{
+  "name": "Solutions Project Nigeria Limited",
+  "short_name": "Solutions Project",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080b0e",
+  "theme_color": "#080b0e",
+  "icons": [
+    {
+      "src": "assets/brand/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
