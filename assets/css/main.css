@@ -3123,3 +3123,122 @@ img, video, svg { max-width:100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
+
+
+/* =========================================================
+   11. MOBILE STABILITY & CORPORATE IDENTITY — 2026-09-28
+   Authoritative overrides. Keep this section LAST.
+========================================================= */
+
+/* Make the developer attribution visibly interactive. */
+.developer-credit {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(199,42,9,.8) !important;
+  text-underline-offset: 4px;
+}
+.developer-credit:hover,
+.developer-credit:focus-visible { color: #eabd57 !important; }
+.company-rc { color:#c9ced4; white-space:nowrap; }
+
+/* Service directory cards use a restrained tinted surface, never plain white. */
+.service-strip {
+  background: linear-gradient(135deg, rgba(247,244,239,.98), rgba(239,233,225,.96));
+  border-color: rgba(199,42,9,.13);
+}
+.service-strip:nth-child(even) {
+  background: linear-gradient(135deg, rgba(242,246,247,.98), rgba(231,238,240,.96));
+}
+
+@media (max-width: 768px) {
+  /* Keep the full corporate name visible on phones. */
+  .site-header { padding-left:12px; padding-right:12px; gap:10px; }
+  .brand { min-width:0; flex:1 1 auto; gap:8px; }
+  .brand img { width:40px; height:40px; flex:0 0 40px; }
+  .brand span {
+    display:block !important;
+    min-width:0;
+    color:#fff;
+    font-size:.78rem;
+    line-height:1.05;
+    white-space:normal;
+  }
+  .brand small { font-size:.61rem; }
+  .menu-btn { flex:0 0 auto; }
+
+  /* HOME BENTO: one independent card per row. No desktop row geometry survives. */
+  .home-services-bento {
+    display:flex !important;
+    flex-direction:column !important;
+    gap:14px !important;
+    grid-auto-rows:unset !important;
+  }
+  .home-services-bento > .service-bento-card,
+  .home-services-bento > .service-bento-card.service-bento-large,
+  .home-services-bento > .service-bento-card.service-bento-wide {
+    display:block !important;
+    position:relative !important;
+    width:100% !important;
+    height:300px !important;
+    min-height:300px !important;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    margin:0 !important;
+    transform:none !important;
+  }
+  .home-services-bento .service-bento-card > img:first-child {
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+  }
+  .home-services-bento .service-bento-content {
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    width:auto !important;
+    max-width:none !important;
+    padding:22px !important;
+  }
+
+  /* SERVICE DIRECTORY: predictable media + copy row, no animation offsets. */
+  .service-directory { display:flex !important; flex-direction:column !important; gap:14px !important; }
+  .service-directory > .service-strip {
+    display:grid !important;
+    grid-template-columns:92px minmax(0,1fr) 22px !important;
+    grid-template-rows:auto !important;
+    align-items:center !important;
+    width:100% !important;
+    min-height:126px !important;
+    height:auto !important;
+    padding:10px !important;
+    gap:12px !important;
+    margin:0 !important;
+    transform:none !important;
+    overflow:hidden !important;
+  }
+  .service-strip .media {
+    grid-column:1 !important;
+    width:92px !important;
+    height:104px !important;
+    border-radius:9px !important;
+  }
+  .service-strip .num,
+  .service-strip .iconbox { display:none !important; }
+  .service-strip .copy { grid-column:2 !important; min-width:0 !important; }
+  .service-strip .copy h3 { margin:0 0 6px !important; font-size:.98rem !important; line-height:1.12 !important; }
+  .service-strip .copy p { margin:0 !important; font-size:.78rem !important; line-height:1.45 !important; overflow-wrap:anywhere; }
+  .service-strip .arr { grid-column:3 !important; justify-self:end !important; }
+}
+
+@media (max-width: 420px) {
+  .brand span { font-size:.72rem; }
+  .brand small { font-size:.57rem; }
+  .home-services-bento > .service-bento-card,
+  .home-services-bento > .service-bento-card.service-bento-large,
+  .home-services-bento > .service-bento-card.service-bento-wide { height:285px !important; min-height:285px !important; }
+  .service-directory > .service-strip { grid-template-columns:82px minmax(0,1fr) 20px !important; gap:10px !important; }
+  .service-strip .media { width:82px !important; height:96px !important; }
+}
