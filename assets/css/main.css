@@ -3242,3 +3242,100 @@ img, video, svg { max-width:100%; }
   .service-directory > .service-strip { grid-template-columns:82px minmax(0,1fr) 20px !important; gap:10px !important; }
   .service-strip .media { width:82px !important; height:96px !important; }
 }
+
+
+/* =========================================================
+   V3 AUTHORITATIVE VISUAL CORRECTIONS
+   Purpose: legibility, consistent Bento styling, clean mobile layout.
+========================================================= */
+
+/* Hero URLs are now declared inline in each HTML file so relative paths
+   resolve from the HTML document rather than from /assets/css/. */
+.page-hero { background-image: none; }
+
+/* Light Bento/card surfaces always use dark typography. */
+.card:not(.service-bento-card),
+.cap-card,
+.pmv article,
+.engagement article,
+.process-grid article {
+  color: #111820 !important;
+}
+.card:not(.service-bento-card) h2,
+.card:not(.service-bento-card) h3,
+.cap-card h3,
+.pmv h3,
+.engagement h3,
+.process-grid h3 { color:#111820 !important; font-weight:800; }
+.card:not(.service-bento-card) p,
+.cap-card p,
+.pmv p,
+.engagement p,
+.process-grid p { color:#46505a !important; }
+
+/* Purpose / Mission / Vision: deliberately image-free, centered and bright. */
+.pmv { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.pmv article {
+  min-height:300px;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:42px 30px;
+  background-image:none !important;
+  background:linear-gradient(145deg,#fffaf7 0%,#f3eee8 100%) !important;
+}
+.pmv article:nth-child(2){ background:linear-gradient(145deg,#f4f6f7 0%,#e9edef 100%) !important; }
+.pmv article:nth-child(3){ background:linear-gradient(145deg,#fff4ed 0%,#f3e5dc 100%) !important; }
+.pmv article::after { display:none !important; }
+.pmv article > * { position:relative; z-index:1; }
+.pmv h3 { font-size:clamp(1.5rem,2.2vw,2rem); margin-bottom:14px; }
+.pmv p { max-width:34ch; margin-inline:auto; }
+
+/* Capabilities Bento: image-free and icon-free by design. */
+.cap-bento { grid-template-columns:repeat(12,minmax(0,1fr)); }
+.cap-card,
+.cap-card.feature {
+  grid-column:span 4;
+  min-height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:34px 28px;
+  color:#111820 !important;
+  background-image:none !important;
+}
+.cap-card:nth-child(1),.cap-card:nth-child(4){ background:linear-gradient(145deg,#fff8f4,#f2e8e1) !important; }
+.cap-card:nth-child(2),.cap-card:nth-child(5){ background:linear-gradient(145deg,#f4f6f7,#e8edef) !important; }
+.cap-card:nth-child(3),.cap-card:nth-child(6){ background:linear-gradient(145deg,#f8f4ed,#eee7dd) !important; }
+.cap-card::after,.cap-card.feature::after { display:none !important; }
+.cap-card .iconbox { display:none !important; }
+.cap-card h3 { font-size:clamp(1.25rem,1.8vw,1.65rem); margin-bottom:14px; }
+.cap-card p { max-width:34ch; margin-inline:auto; }
+
+/* Engagement cards: readable typography and centered content. */
+.engagement article { text-align:center; }
+.engagement article img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+
+/* Service-detail process cards. */
+.process-grid article {
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(145deg,#fff9f5,#f1e8e1) !important;
+}
+.process-grid article:nth-child(even){ background:linear-gradient(145deg,#f4f6f7,#e9edef) !important; }
+.process-grid article span { margin:0 auto 16px; }
+
+/* Mobile company name remains visible. */
+@media (max-width:768px){
+  .brand span { display:block !important; min-width:0; }
+  .brand strong { font-size:.72rem; line-height:1.05; }
+  .brand small { font-size:.55rem; line-height:1.05; }
+  .pmv,.cap-bento { grid-template-columns:1fr !important; }
+  .pmv article,.cap-card,.cap-card.feature { grid-column:1 !important; min-height:230px; }
+  .process-grid article { min-height:200px; }
+}
