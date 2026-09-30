@@ -3386,3 +3386,77 @@ img, video, svg { max-width:100%; }
 .consent-field label{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;line-height:1.5;color:#4f5a65}
 .consent-field input{width:auto;margin-top:.25rem}
 .legal-copy{max-width:900px}.legal-copy h2{margin-top:2.2rem;margin-bottom:.7rem}.legal-copy p{line-height:1.75}
+
+/* =========================================================
+   LEGAL PAGES — HEADER FIX
+========================================================= */
+
+.legal-hero {
+  background: #f4f5f6;
+  color: #111820;
+  padding: 170px 0 64px;
+  min-height: auto;
+}
+
+.legal-hero .eyebrow {
+  color: #c72a09;
+  margin-bottom: 14px;
+}
+
+.legal-hero h1 {
+  color: #111820;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  margin: 0 0 28px;
+}
+
+.legal-hero .lead {
+  color: #111820;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: 125px 0 48px;
+  }
+
+  .legal-hero h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+    line-height: 1;
+    margin-bottom: 22px;
+  }
+}
+
+/* =========================================================
+   HERO IMAGE CORRECTION — NO DARK OVERLAY
+========================================================= */
+
+.page-hero::before {
+  display: none !important;
+}
+
+.page-hero {
+  background-size: cover;
+  background-position: center center;
+}
+
+.page-hero h1,
+.page-hero .lead,
+.page-hero .eyebrow {
+  position: relative;
+  z-index: 2;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.85),
+    0 4px 14px rgba(0, 0, 0, 0.65);
+}
+
+.page-hero h1 {
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .page-hero::before {
+    display: none !important;
+  }
+}
