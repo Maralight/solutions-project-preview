@@ -1,16 +1,14 @@
-# Solutions Project Nigeria Limited — Production Website V3
+# Solutions Project Nigeria Limited — Production Website v4.0
 
-Production-oriented static corporate website for https://solutionsprojectltd.com/.
+Production-ready static website for `solutionsprojectltd.com`.
 
-## V3 highlights
-- Responsive mobile-first corrections
-- Brightened/clarified photographic library
-- Image-free Purpose / Mission / Vision cards
-- Image-free, icon-free Capabilities Bento
-- Dark typography on all light/tinted cards
-- Corrected hero image path architecture
-- Clearly labelled editable HTML sections
-- SEO/canonical/sitemap structure retained
-- GA4 and Formspree configuration points retained
+## Key configuration
+- Formspree endpoints: `assets/js/config.js`
+- GA4 Measurement ID: `assets/js/config.js`
+- Homepage slideshow list: `assets/js/config.js`
+- Contact: info@solutionsprojectltd.com
+- RFQ: rfq@solutionsprojectltd.com
+- Phone: 08064641700
+- RC: 9078940
 
-See IMAGE-REPLACEMENT-GUIDE.md and DEPLOYMENT-GUIDE.md.
+The site is indexable in production, includes sitemap/robots metadata, favicon assets, structured data, responsive navigation, accessible forms and organized image assets.
